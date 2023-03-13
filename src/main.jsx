@@ -11,6 +11,10 @@ import ErrorPage from './components/Common/Errorpage';
 import Profile from './components/Profile';
 import Registration from './components/Common/Registration';
 import Login from './components/Common/Login';
+import DoctorHomepage from './components/Doctor/DoctorHomepage';
+import PatientHomepage from './components/Patient/PatientHomepage';
+import HospitalHomepage from './components/Hospital/HospitalHomepage';
+import HealthRecord from './components/Patient/HealthRecord';
 
 
 const router = createBrowserRouter([
@@ -22,6 +26,22 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element : <Profile/>
+      },
+      {
+        path : "/doctor/home",
+        element: <DoctorHomepage/>
+      },
+      {
+        path: "/patient/home",
+        element : <PatientHomepage/>
+      },
+      {
+        path: "/hospital/home",
+        element: <HospitalHomepage/>
+      },
+      {
+        path : "/healthrecord",
+        element : <HealthRecord/>
       }
     ]
   },
