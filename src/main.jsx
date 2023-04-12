@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect, useState}from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
@@ -15,7 +15,43 @@ import DoctorHomepage from './components/Doctor/DoctorHomepage';
 import PatientHomepage from './components/Patient/PatientHomepage';
 import HospitalHomepage from './components/Hospital/HospitalHomepage';
 import HealthRecord from './components/Patient/HealthRecord';
+import AddHealthRecord from './components/Doctor/AddHealthRecord';
+import Web3 from 'web3';
+import {abi} from './ABI'
 
+
+
+const [Contract , setContract] = useState();
+
+
+useEffect(()=>{
+  const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8546"));
+  const contract = new web3.eth.Contract(abi,"0x3fcECcE434D224bd66CBd99357970E0084425099");
+  // setContract(contract);
+  check(contract);
+},[]);
+
+
+
+
+
+
+// await contract.methods.IsUserRegistered().call().then(console.log);
+
+async function check(contract){
+  await contract.methods.registerAsDoctor("Nikhil",21,"abcd").call();
+  await contract.methods.getAllDoctors().call().then(console.log);
+}
+
+
+
+
+// await check();
+
+// console.log(web3.currentProvider) ;
+
+
+// console.log(abi);
 
 const router = createBrowserRouter([
   {
@@ -42,6 +78,10 @@ const router = createBrowserRouter([
       {
         path : "/healthrecord",
         element : <HealthRecord/>
+      },
+      {
+        path : "/add-health-record",
+        element: <AddHealthRecord/>
       }
     ]
   },

@@ -3,25 +3,23 @@ import { DataGrid } from "@mui/x-data-grid";
 import React from "react";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90 },
+  { field: "id", headerName: "ID", width: 90},
   {
     field: "doctorName",
     headerName: "Doctor Name",
     width: 250,
-    editable: true,
   },
   {
     field: "publicKey",
     headerName: "Public Key",
     width: 450,
-    editable: true,
   },
   {
     field: "registrationNumber",
     headerName: "Reg. Number",
     type: "string",
     width: 210,
-    editable: true,
+    flex: 1
   },
 ];
 
@@ -73,8 +71,6 @@ function HospitalHomepage() {
             },
           }}
           pageSizeOptions={[5]}
-          checkboxSelection
-          disableRowSelectionOnClick
         />
       </Box>
       <Box sx={{

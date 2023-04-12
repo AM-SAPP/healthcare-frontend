@@ -56,29 +56,6 @@ html {
     transform: translateY(1px);
   }
   
-  #contact h1 {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  #contact h1 form {
-    display: flex;
-    align-items: center;
-    margin-top: 0.25rem;
-  }
-  #contact h1 form button {
-    box-shadow: none;
-    font-size: 1.5rem;
-    font-weight: 400;
-    padding: 0;
-  }
-  #contact h1 form button[value="true"] {
-    color: #a4a4a4;
-  }
-  #contact h1 form button[value="true"]:hover,
-  #contact h1 form button[value="false"] {
-    color: #eeb004;
-  }
   
   form[action$="destroy"] button {
     color: #f44250;
@@ -103,7 +80,7 @@ html {
   }
   
   #sidebar {
-    width: 22rem;
+    width: 15rem;
     background-color: #f7f7f7;
     border-right: solid 1px #e3e3e3;
     display: flex;
